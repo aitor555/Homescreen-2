@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+/*styling custom scrollbar*/
+
+::-webkit-scrollbar, ::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+    width: 8px;
+    height: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #a2a2a21a;
+    border-radius:5px;
+}
+
+::-webkit-scrollbar-thumb:not(:active):hover {
+    background: #86868699;
+}
+
+::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-thumb:hover:active {
+    background: #424242cc;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #0E0F12;
+	cursor: url(cursor.png) 25 25, auto;
+}
+
+a{
+	cursor: url(cursor.png) 25 25, auto;;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url(bgs/1396388094146.jpg);
+  background-size: cover;
+  filter: opacity(40%);
+  z-index: -99;
+}
+
+.body-top-tab {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h1,h2,h3,h4,a, ul, li{
+	font-family: 'Archivo Black', sans-serif;
+	color: #EDEDEB;
+}
+.spacer{
+	font-size: 2rem;
+	color: #EDEDEB;
+	font-weight: bold;
+	display: none;
+}
+ul, li {
+	list-style: none;
+}
+li{
+	padding: 15px 6px;
+}
+
+#rss-feeds ul li:hover {
+    background-color: #FFFFFF16;
+}
+
+h1{
+	font-size:3.5rem;
+	width: 80%;
+	margin: auto;
+	margin-top: 10vh;
+}
+
+.secondaryTitle{
+	width: 80%;
+	margin: auto;
+	padding-left: 8px;
+	transform: translateY(-8px);
+}
+
+.wrapper{
+	width: 80%;
+	margin: auto;
+	margin-top: 4vh;
+	display: flex;
+	flex-direction: row;
+	height: 58vh;
+	justify-content: space-between;
+}
+.thirds{
+	width: 30%;
+	padding: 20px;
+	overflow-y: scroll;
+}
+
+.thirds h2{
+	margin-bottom: 16px;
+}
+
+.rssLink{
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.rssTitle{
+	display: block;
+	font-weight: bold;
+	letter-spacing: 0.06rem;
+	margin-bottom: 2px;
+	line-height: 1.1rem;
+}
+
+.rssSmallText{
+	font-size: 0.7rem;
+	color: #7B7B7B;
+	letter-spacing: unset;
+	margin-left: 2px;
+}
+.mainLink {
+    margin: 3px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    /* line-height: 2.5rem; */
+    letter-spacing: 0.05rem;
+    flex: 0 0 32%;
+    padding: 6px 6px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    clip-path: polygon(100% 0, 100% 69%, 89% 100%, 0 100%, 0 0);
+    background-color: #FFFFFF08;
+}
+.mainLink:hover{
+	color: yellow;
+	/*font-style: italic;*/
+	background-color: #FFFFFF19;
+}
+
+#mainTime{
+	margin-left: 3px;
+}

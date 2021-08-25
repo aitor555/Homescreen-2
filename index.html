@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="stylesheet.css">
+	    <script src="dist/rss.global.min.js"></script>
+	    <script src="moment.js"></script>
+    <script>
+      window.onload = function() {
+        new RSS(
+          document.querySelector("#rss-feeds"),
+          ["https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"]
+        ).render();
+      };
+    </script>
+
+</head>
+<body>
+	<h1><span id="timeOfDay"></span> User</h1>
+	<h2 class="secondaryTitle">It's <span id="mainTime"></span></h2>
+	<div class="wrapper">
+		<!--Links-->
+		<div class="thirds" style="display: flex;flex-wrap: wrap;flex-direction: initial;height: fit-content;">
+			<h2 style="width:100%;">Links</h2>
+			<a href="https://youtube.com/" class="mainLink">youtube</a><span class="spacer">|</span>
+			<a href="https://soundcloud.com/" class="mainLink">soundcloud</a><span class="spacer">|</span>
+			<a href="https://drive.google.com/drive/u/0/my-drive" class="mainLink">gDisk</a><span class="spacer">|</span>
+			<a href="https://drive.google.com/drive/u/1/my-drive" class="mainLink">gDisk_2</a><span class="spacer">|</span>
+			<a href="https://github.com/" class="mainLink">github</a><span class="spacer">|</span>
+			<a href="https://www.behance.net/" class="mainLink">behance</a><span class="spacer">|</span>
+			<a href="https://dribbble.com/" class="mainLink">dribbble</a><span class="spacer">|</span>
+			<a href="https://reddit.com/r/vexillology/" class="mainLink">r/vexillology</a><span class="spacer">|</span>
+			<a href="https://reddit.com/r/cyberpunk/" class="mainLink">r/cyberpunk</a><span class="spacer">|</span>
+			<a href="https://pinterest.com" class="mainLink">pinterest</a>
+		</div>
+	<!--Weather-->
+		<div class="thirds">
+			<h2>Weather</h2>
+				<a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="New york, NY" data-theme="original" data-basecolor="rgba(255, 255, 255, 0)" data-accent="rgba(255, 255, 255, 0.05)" data-highcolor="#ffffff" data-lowcolor="#c9c9c9" data-cloudcolor="#ffffff" data-cloudfill="#ffffff" data-raincolor="#ffffff" >NEW YORK New york, NY</a>
+				<script>
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+				</script>
+
+				<a class="weatherwidget-io" href="https://forecast7.com/en/35d71139d73/tokyo/" data-label_1="Weather in" data-label_2="Tokyo" data-theme="original" data-basecolor="rgba(255, 255, 255, 0)" data-accent="rgba(255, 255, 255, 0.05)" data-highcolor="#ffffff" data-lowcolor="#c9c9c9" data-cloudcolor="#ffffff" data-cloudfill="#ffffff" data-raincolor="#ffffff" >Weather in Tokyo</a>
+				<script>
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+				</script>
+		</div>
+		<!--RSS-->
+		<div class="thirds">
+			<h2>News</h2>
+			<div id="rss-feeds"></div>
+		</div>
+
+	</div>
+</body>
+    <script type="text/javascript">
+    	function greeting() {
+        const hour = moment().hour();
+
+        if (hour > 20){
+            return "Good night";
+        }
+
+        if (hour > 16){
+            return "Good evening";
+        }
+
+         if (hour > 11){
+             return "Good afternoon";
+         }
+
+         return 'Good morning';
+	    }
+	    document.getElementById("timeOfDay").innerHTML = greeting() ;
+	    document.getElementById("mainTime").innerHTML = moment().format(' HH:mm MMMM Do'); ;
+    </script>
+</html>
